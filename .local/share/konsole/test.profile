@@ -1,5 +1,5 @@
 [Appearance]
-ColorScheme=Nordian-Konsole
+ColorScheme=148925-bl1nk
 
 [General]
 Name=test
