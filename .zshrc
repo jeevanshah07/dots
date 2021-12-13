@@ -1,4 +1,4 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Enable Powerlevel11k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
@@ -23,7 +23,7 @@ export PATH=/home/marvel/.nimble/bin:$PATH
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="powerlevel10k/powerlevel10k" # set by `omz`
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -106,6 +106,20 @@ alias malcolm-start="python $mRUN $mCONF"
 alias malcolm-linter="flake8 --extend-ignore=E501,E401 ./src/*"
 alias flake8="python3 -m flake8"
 alias yapf="python3 -m yapf"
+
+# function g++() {
+#   gcc -x c++ -o $1 -lstdc++ $2
+# }
+#
+# todo: check if out dir exists if not create it
+# todo: print stuff to the term as shit is being done
+function j--() {
+  if [ ! -d "`pwd`/out" ]; then
+    mkdir "`pwd`/out"
+  fi
+  g++ -o "`pwd`/out" $1 && "./`pwd`/"out"/`$1`"
+}
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
