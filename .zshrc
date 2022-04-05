@@ -91,8 +91,6 @@ plugins=(
 alias malcolm-env="source $mENV"
 alias malcolm-start="python $mRUN $mCONF"
 alias malcolm-linter="flake8 --extend-ignore=E501,E401 ./src/*"
-alias cp='cp -r'
-alias exa='exa -la --no-user --git --icons --group-directories-first'
 
 source $ZSH/oh-my-zsh.sh
 
@@ -116,3 +114,6 @@ source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+alias ls="exa -la --no-user --git --icons --group-directories-first"
+alias cp="cp -r"
