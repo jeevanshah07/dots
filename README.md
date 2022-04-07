@@ -1,6 +1,6 @@
-# There's no place like $HOME
+# There's no place like ~
 
-##Welcome to my dots, here's a quick overview:
+## Welcome to my dots, here's a quick overview:
 
 * OS: Arch Linux
 * Window Manager: KDE
@@ -13,7 +13,7 @@
 
 ---
 
-###What's where and where's what?
+### What's where and where's what?
 
 * Konsole: You can find all my konsole profile color schemes in `.local/share/konsole`
 * Firefox: You can find my editied version of flying fox in `.mozilla/firefox/FIREFOX_VERSION/chrome`. There's also a version of [material fox](https://github.com/muckSponge/MaterialFox) in the same dir just under `chrome-material`.
