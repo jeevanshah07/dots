@@ -8,4 +8,9 @@ map("n", "<leader>te", ":Telescope <CR>")
 map("n", "<leader>ta", ":TZAtaraxis <CR>")
 map("n", "<leader>tm", ":TZMinimalist <CR>")
 map("n", "<leader>tf", ":TZFocus <CR>")
+
+-- trouble.nvim
 map("n", "<leader>tr", ":TroubleToggle <CR>")
+
+-- symbols_outline.nvim
+map("n", "<leader>ts", ":SymbolsOutline <CR>")
