@@ -84,4 +84,13 @@ return {
   ["hrsh7th/nvim-cmp"] = {},
 
   ['simrat39/symbols-outline.nvim'] = {},
+
+  ['folke/todo-comments.nvim'] = {
+    requires = {
+      "nvim-lua/plenary.nvim"
+    },
+    config = function()
+      require("custom.plugins.todo")
+    end
+  },
 }

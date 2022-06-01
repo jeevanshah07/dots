@@ -10,7 +10,7 @@ M.plugins = {
          setup_lspconf = "custom.plugins.lspconfig",
       },
       statusline = {
-         --    style = "slant"
+        style = "slant"
       },
    },
 
@@ -23,7 +23,9 @@ M.plugins = {
 }
 
 M.ui = {
-   theme = "wombat",
+   theme = "rxyhn",
 }
+
+M.mappings = require "custom.mappings"
 
 return M
