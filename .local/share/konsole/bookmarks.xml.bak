@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE xbel>
-<xbel xmlns:kdepriv="http://www.kde.org/kdepriv" xmlns:bookmark="http://www.freedesktop.org/standards/desktop-bookmarks" dbusName="konsole" xmlns:mime="http://www.freedesktop.org/standards/shared-mime-info">
+<xbel xmlns:kdepriv="http://www.kde.org/kdepriv" xmlns:bookmark="http://www.freedesktop.org/standards/desktop-bookmarks" xmlns:mime="http://www.freedesktop.org/standards/shared-mime-info" dbusName="konsole">
  <bookmark href="file:///home/marvel/powercord/src/Powercord/plugins">
   <title>plugins</title>
   <info>
@@ -11,6 +11,14 @@
  </bookmark>
  <bookmark href="file:///home/marvel/build">
   <title>build</title>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name=""/>
+   </metadata>
+  </info>
+ </bookmark>
+ <bookmark href="ssh://192.168.86.32">
+  <title>192.168.86.32</title>
   <info>
    <metadata owner="http://freedesktop.org">
     <bookmark:icon name=""/>

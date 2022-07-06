@@ -7,18 +7,15 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-
 # Path to oh-my-zsh installation.
 export ZSH="/home/marvel/.oh-my-zsh"
 
 export XDG_RUNTIME_DIR='/tmp/runtime-marvel/'
 export EDITOR="nvim"
 
-
 export mENV=". /home/marvel/.local/share/virtualenvs/Malcolm-next-_RtmuMXy/bin/activate"
 export mRUN="~/Coding/Malcolm-next/src/bot.py"
 export mCONF="~/Coding/Malcolm-next/config.yml"
-
 
 PATH="/home/marvel/.local/bin":$PATH
 export PATH="/home/marvel/.cargo/bin":$PATH
@@ -80,6 +77,9 @@ update_dots () {
   echo "updating rofi"
   rm -r ~/dots/.config/rofi
   cp -r ~/.config/rofi ~/dots/.config/rofi
+  echo "updating console confs"
+  rm -r ~/dots/.local/share/konsole
+  cp -r ~/.local/share/konsole ~/dots/.local/share/
   echo "finished"
 }
 
