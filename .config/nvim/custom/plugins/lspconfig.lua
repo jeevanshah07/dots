@@ -4,7 +4,7 @@ M.setup_lsp = function(attach, capabilities)
    local lspconfig = require "lspconfig"
 
    -- lspservers with default config
-   local servers = { "jdtls", "gopls", "pyright", "html", "cssls", "bashls", "ccls", "emmet_ls", "tsserver" }
+   local servers = { "pyright", "html", "cssls", "bashls", "clangd", "nimls", "emmet_ls", "tsserver" }
 
    for _, lsp in ipairs(servers) do
       lspconfig[lsp].setup {

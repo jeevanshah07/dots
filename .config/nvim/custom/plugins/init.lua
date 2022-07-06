@@ -10,12 +10,13 @@ return {
          require("nvim-ts-autotag").setup()
       end,
    },
-   -- ["jose-elias-alvarez/null-ls.nvim"] = {
-   --    after = "nvim-lspconfig",
-   --    config = function()
-   --       require("custom.plugins.null-ls").setup()
-   --    end,
-   -- },
+
+   ["jose-elias-alvarez/null-ls.nvim"] = {
+      after = "nvim-lspconfig",
+      config = function()
+         require("custom.plugins.null-ls").setup()
+      end,
+   },
 
    ["nvim-telescope/telescope-media-files.nvim"] = {
       after = "telescope.nvim",
@@ -66,10 +67,21 @@ return {
   ["wakatime/vim-wakatime"] = {},
 
   ["folke/trouble.nvim"] = {
-    config = function()
+    config = function() 
       require("trouble").setup{}
   end,
   },
+
+  ["nvim-neo-tree/neo-tree.nvim"] = {
+    branch = "v2.x",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "kyazdani42/nvim-web-devicons",
+      "MunifTanjim/nui.nvim",
+    }
+  },
+
+  ["hrsh7th/nvim-cmp"] = {},
 
   ['simrat39/symbols-outline.nvim'] = {},
 
@@ -81,6 +93,4 @@ return {
       require("custom.plugins.todo")
     end
   },
-  ['williamboman/nvim-lsp-installer'] = {},
-
 }

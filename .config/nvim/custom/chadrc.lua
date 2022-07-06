@@ -23,7 +23,7 @@ M.plugins = {
 }
 
 M.ui = {
-   theme = "rxyhn",
+   theme = "radium",
 }
 
 M.mappings = require "custom.mappings"
