@@ -77,9 +77,9 @@ update_dots () {
   echo "updating rofi"
   rm -r ~/dots/.config/rofi
   cp -r ~/.config/rofi ~/dots/.config/rofi
-  echo "updating console confs"
+  echo "updating konsole confs"
   rm -r ~/dots/.local/share/konsole
-  cp -r ~/.local/share/konsole ~/dots/.local/share/
+  cp -r ~/.local/share/konsole ~/dots/.local/share/konsole
   echo "finished"
 }
 
