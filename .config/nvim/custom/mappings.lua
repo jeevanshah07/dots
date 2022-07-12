@@ -32,5 +32,11 @@ M.todo = {
   }
 }
 
+M.exit = {
+  i = {
+    ["jk"] = { "<ESC>", " = exit insert mode"}
+  }
+}
+
 return M
 
