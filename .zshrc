@@ -67,7 +67,7 @@ fi
 update_dots () {
   echo "updating .zshrc"
   rm ~/dots/.zshrc
-  cp .zshrc ~/dots/.zshrc
+  cp ~/.zshrc ~/dots/.zshrc
   echo "updating nvchad config"
   rm -r ~/dots/.config/nvim/custom
   cp -r ~/.config/nvim/lua/custom ~/dots/.config/nvim/custom
