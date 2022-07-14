@@ -1,33 +1,19 @@
 local null_ls = require "null-ls"
 local b = null_ls.builtins
 
-local sources = {
-
-   -- webdev stuff
-   b.formatting.deno_fmt,
-   b.formatting.prettierd.with { filetypes = { "html", "markdown", "css" } },
-
-   -- Lua
-   b.formatting.stylua,
-   b.diagnostics.luacheck.with { extra_args = { "--global vim" } },
-
-   -- Shell
-   b.formatting.shfmt,
-   b.diagnostics.shellcheck.with { diagnostics_format = "#{m} [#{c}]" },
-
-   b.formatting.clang_format,
-
-   -- python
-   b.diagnostics.flake8,
-   b.formatting.autopep8,
-}
+local formatting = b.formatting
+local diagnostics = b.diagnostics
 
 local M = {}
 
 M.setup = function()
    null_ls.setup {
       debug = true,
-      sources = sources,
+      sources = {
+        formatting.black.with({ extra_args = { "--fast" } }),
+        diagnostics.flake8.with({ extra_args = { "--extend-ignore=E501" }}),
+        b.code_actions.refactoring,
+      }
    }
 end
 

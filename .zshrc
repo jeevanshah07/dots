@@ -80,7 +80,7 @@ update_dots () {
   echo "updating konsole"
   rm -r ~/dots/.local/share/konsole
   cp -r ~/.local/share/konsole ~/dots/.local/share/konsole
-  echo "updateing kitty"
+  echo "updating kitty"
   rm ~/dots/.config/kitty/kitty.conf
   cp ~/.config/kitty/kitty.conf ~/dots/.config/kitty
   echo "finished"
