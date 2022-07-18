@@ -44,5 +44,11 @@ M.formatting = {
   }
 }
 
+M.markdown = {
+  n = {
+    ["<leader>md"] = { "<cmd> MarkdownPreview <CR>", " = start a markdown preview session"}
+  }
+}
+
 return M
 

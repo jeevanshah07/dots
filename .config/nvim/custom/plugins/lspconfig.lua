@@ -29,7 +29,7 @@ M.setup_lsp = function(attach, capabilities)
    local lspconfig = require "lspconfig"
 
    -- lspservers with default config
-   local servers = { "jedi_language_server", "html", "cssls", "bashls", "clangd", "nimls", "emmet_ls", "tsserver" }
+   local servers = { "jdtls", "jedi_language_server", "html", "cssls", "bashls", "clangd", "nimls", "emmet_ls", "tsserver" }
 
    for _, lsp in ipairs(servers) do
       lspconfig[lsp].setup {
