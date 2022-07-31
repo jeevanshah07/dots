@@ -61,31 +61,11 @@ alias cp="cp -r"
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
-  export EDITOR='mvim'
+  export EDITOR='nvim'
 fi
 
 # NOTE: user functions
-update_dots () {
-  echo "updating .zshrc"
-  rm ~/dots/.zshrc
-  cp ~/.zshrc ~/dots/.zshrc
-  echo "updating nvchad config"
-  rm -r ~/dots/.config/nvim/custom
-  cp -r ~/.config/nvim/lua/custom ~/dots/.config/nvim/custom
-  echo "updating dunstrc"
-  rm ~/dots/.config/dunst/dunstrc
-  cp ~/.config/dunst/dunstrc ~/dots/.config/dunst
-  echo "updating rofi"
-  rm -r ~/dots/.config/rofi
-  cp -r ~/.config/rofi ~/dots/.config/rofi
-  echo "updating konsole"
-  rm -r ~/dots/.local/share/konsole
-  cp -r ~/.local/share/konsole ~/dots/.local/share/konsole
-  echo "updating kitty"
-  rm ~/dots/.config/kitty/kitty.conf
-  cp ~/.config/kitty/kitty.conf ~/dots/.config/kitty
-  echo "finished"
-}
+
 
 
 # NOTE:  To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.

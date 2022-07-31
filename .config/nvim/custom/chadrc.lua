@@ -23,7 +23,7 @@ M.plugins = {
 }
 
 M.ui = {
-   theme = "decay",
+   theme = "jellybeans",
 }
 
 M.mappings = require "custom.mappings"

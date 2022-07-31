@@ -99,4 +99,8 @@ return {
     },
   },
 
+  ['shaunsingh/oxocarbon.nvim'] = {
+    run = './install.sh'
+  }
+
 }
