@@ -4,7 +4,7 @@
 
 * OS: Arch Linux
 * Window Manager: KDE
-* Terminal: Konsole
+* Terminal: Kitty
 * Browser: Firefox (with styled with [Flying Fox](https://github.com/akshat46/FlyingFox))
 * Text Editor: Nvim ([NvChad](https://github.com/NvChad/NvChad)) or VSCode
 * Music Player: Spotify
