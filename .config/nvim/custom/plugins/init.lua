@@ -44,23 +44,23 @@ return {
       end,
    },
 
-   ["Pocco81/AutoSave.nvim"] = {
+   ["Pocco81/auto-save.nvim"] = {
      config = function()
-        local autosave = require "autosave"
+        local autosave = require "auto-save"
 
         autosave.setup {
-         enabled = true,
-         execution_message = "autosaved at : " .. vim.fn.strftime "%H:%M:%S",
-         events = { "InsertLeave", "TextChanged" },
-         conditions = {
-            exists = true,
-            filetype_is_not = {},
-            modifiable = true,
-         },
-         clean_command_line_interval = 2500,
-         on_off_commands = true,
-         write_all_buffers = false,
-      }
+      --    enabled = true,
+      --    execution_message = "autosaved at : " .. vim.fn.strftime "%H:%M:%S",
+      --    events = { "InsertLeave", "TextChanged" },
+      --    conditions = {
+      --       exists = true,
+      --       filetype_is_not = {},
+      --       modifiable = true,
+      --    },
+      --    clean_command_line_interval = 2500,
+      --    on_off_commands = true,
+      --    write_all_buffers = false,
+       }
    end,
   },
 
@@ -98,9 +98,5 @@ return {
     run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown"
     },
   },
-
-  ['shaunsingh/oxocarbon.nvim'] = {
-    run = './install.sh'
-  }
 
 }
