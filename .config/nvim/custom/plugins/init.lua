@@ -1,22 +1,37 @@
 return {
-   ["goolord/alpha-nvim"] = {
-     disable = true,
-   },
 
-   ["windwp/nvim-ts-autotag"] = {
-      ft = { "html", "javascriptreact" },
-      after = "nvim-treesitter",
-      config = function()
-         require("nvim-ts-autotag").setup()
-      end,
-   },
+  ["neovim/nvim-lspconfig"] = {
+    config = function()
+      require "plugins.configs.lspconfig"
+      require "custom.plugins.lspconfig"
+    end,
+  },
 
-   ["jose-elias-alvarez/null-ls.nvim"] = {
-      after = "nvim-lspconfig",
-      config = function()
-         require("custom.plugins.null-ls").setup()
-      end,
-   },
+  ["jose-elias-alvarez/null-ls.nvim"] = {
+    after = "nvim-lspconfig",
+    config = function()
+      require "custom.plugins.null-ls"
+    end,
+  },
+
+  ["andreadev-it/shade.nvim"] = {
+    module = "shade",
+    config = function()
+      require("custom.plugins.smolconfigs").shade()
+    end,
+  },
+
+  ["windwp/nvim-ts-autotag"] = {
+    ft = { "html", "javascriptreact" },
+    after = "nvim-treesitter",
+    config = function()
+      require("custom.plugins.smolconfigs").autotag()
+    end,
+  },
+
+  ["goolord/alpha-nvim"] = {
+    disable = true,
+  },
 
    ["nvim-telescope/telescope-media-files.nvim"] = {
       after = "telescope.nvim",
@@ -44,30 +59,17 @@ return {
       end,
    },
 
-   ["Pocco81/auto-save.nvim"] = {
-     config = function()
-        local autosave = require "auto-save"
-
-        autosave.setup {
-      --    enabled = true,
-      --    execution_message = "autosaved at : " .. vim.fn.strftime "%H:%M:%S",
-      --    events = { "InsertLeave", "TextChanged" },
-      --    conditions = {
-      --       exists = true,
-      --       filetype_is_not = {},
-      --       modifiable = true,
-      --    },
-      --    clean_command_line_interval = 2500,
-      --    on_off_commands = true,
-      --    write_all_buffers = false,
-       }
-   end,
+	["Pocco81/auto-save.nvim"] = {
+    config = function()
+      require("auto-save").setup {
+    }
+    end,
   },
 
   ["wakatime/vim-wakatime"] = {},
 
   ["folke/trouble.nvim"] = {
-    config = function() 
+    config = function()
       require("trouble").setup{}
   end,
   },
@@ -99,4 +101,14 @@ return {
     },
   },
 
+  [ "https://git.sr.ht/~whynothugo/lsp_lines.nvim" ] = {
+    requires = {
+      "nvim-lspconfig"
+    },
+    config = function()
+      require("lsp_lines").setup(
+        vim.diagnostic.config({ virtual_text = false })
+      )
+  end,
+  }
 }
