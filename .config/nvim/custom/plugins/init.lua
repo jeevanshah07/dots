@@ -21,6 +21,8 @@ return {
     end,
   },
 
+  ["lukas-reineke/indent-blankline.nvim"] = {},
+
   ["windwp/nvim-ts-autotag"] = {
     ft = { "html", "javascriptreact" },
     after = "nvim-treesitter",
@@ -84,9 +86,11 @@ return {
   },
 
   ["hrsh7th/nvim-cmp"] = {},
-
-  ['simrat39/symbols-outline.nvim'] = {},
-
+  ['simrat39/symbols-outline.nvim'] = {
+    config = function ()
+      require("symbols-outline").setup()
+    end
+  },
   ['folke/todo-comments.nvim'] = {
     requires = {
       "nvim-lua/plenary.nvim"
@@ -101,14 +105,5 @@ return {
     },
   },
 
-  [ "https://git.sr.ht/~whynothugo/lsp_lines.nvim" ] = {
-    requires = {
-      "nvim-lspconfig"
-    },
-    config = function()
-      require("lsp_lines").setup(
-        vim.diagnostic.config({ virtual_text = false })
-      )
-  end,
-  }
+  ["sbdchd/neoformat"] = {},
 }

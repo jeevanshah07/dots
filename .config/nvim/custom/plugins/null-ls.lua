@@ -12,6 +12,7 @@ M.setup = function()
       sources = {
         formatting.black.with({ extra_args = { "--fast" } }),
         diagnostics.flake8.with({ extra_args = { "--extend-ignore=E501" }}),
+        diagnostics.pylsp.with({ extra_args = { "--extend-ignore=E501" }}),
         b.code_actions.refactoring,
       }
    }

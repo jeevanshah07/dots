@@ -25,7 +25,7 @@ M.plugins = {
 }
 
 M.ui = {
-  theme = "radium",
+  theme = "yoru",
 }
 
 M.mappings = require "custom.mappings"

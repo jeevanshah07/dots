@@ -40,7 +40,8 @@ M.exit = {
 
 M.formatting = {
   n = {
-    ["<leader>fm"] = { "<cmd> lua vim.lsp.buf.formatting_sync() <CR>", " = format current file using null-ls"}
+    ["<leader>fmp"] = { "<cmd> Neoformat black <CR>", " = format current python file using black"},
+    ["<leader>fmy"] = { "<cmd> Neoformat yapf <CR>", " = format current python file using yapf"}
   }
 }
 

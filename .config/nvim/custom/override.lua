@@ -20,7 +20,6 @@ M.mason = {
 
     -- python
     "pylsp",
-    "jedi_language_server",
     "flake8",
     "black"
   },
