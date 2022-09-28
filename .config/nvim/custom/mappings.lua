@@ -40,7 +40,7 @@ M.exit = {
 
 M.formatting = {
   n = {
-    ["<leader>fmp"] = { "<cmd> Neoformat black <CR>", " = format current python file using black"},
+    ["<leader>fm"] = { "<cmd> Neoformat black <CR>", " = format current python file using black"},
     ["<leader>fmy"] = { "<cmd> Neoformat yapf <CR>", " = format current python file using yapf"}
   }
 }
