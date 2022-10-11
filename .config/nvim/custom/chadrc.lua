@@ -25,7 +25,7 @@ M.plugins = {
 }
 
 M.ui = {
-  theme = "yoru",
+  theme = "onedark",
 }
 
 M.mappings = require "custom.mappings"
