@@ -55,6 +55,11 @@ alias malcolm-linter="flake8 --extend-ignore=E501,E401 ./src/*"
 alias ls="exa -la --no-user --git --icons --group-directories-first"
 alias cp="cp -r"
 
+if [ $TERM = "xterm-kitty" ]
+then
+  alias ssh="kitty +kitten ssh"
+fi
+
 
 # NOTE: User configuration
 
@@ -72,3 +77,4 @@ fi
 # NOTE:  To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+export PATH=$PATH:/home/marvel/.spicetify

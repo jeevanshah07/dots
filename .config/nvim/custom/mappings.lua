@@ -51,5 +51,17 @@ M.markdown = {
   }
 }
 
+M.blame = {
+  n = {
+    ["<leader>oc"] = { "<cmd> GitBlameOpenCommitURL <CR>", " = open the commit url"}
+  }
+}
+
+M.lazy = {
+  n = {
+    ["<leader>lg"] = { "<cmd> LazyGit <CR>", " = open lazy git"}
+  }
+}
+
 return M
 

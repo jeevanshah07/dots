@@ -35,36 +35,35 @@ return {
     disable = true,
   },
 
-   ["nvim-telescope/telescope-media-files.nvim"] = {
-      after = "telescope.nvim",
-      config = function()
-         require("telescope").setup {
-            extensions = {
-               media_files = {
-                  filetypes = { "png", "webp", "jpg", "jpeg" },
-               },
-               -- fd is needed
-            },
-         }
-         require("telescope").load_extension "media_files"
-      end,
-   },
-
-   ["Pocco81/TrueZen.nvim"] = {
-      cmd = {
-         "TZAtaraxis",
-         "TZMinimalist",
-         "TZFocus",
-      },
-      config = function()
-         require "custom.plugins.truezen"
-      end,
-   },
-
-	["Pocco81/auto-save.nvim"] = {
+  ["nvim-telescope/telescope-media-files.nvim"] = {
+    after = "telescope.nvim",
     config = function()
-      require("auto-save").setup {
-    }
+      require("telescope").setup {
+        extensions = {
+          media_files = {
+            filetypes = { "png", "webp", "jpg", "jpeg" },
+          },
+          -- fd is needed
+        },
+      }
+      require("telescope").load_extension "media_files"
+    end,
+  },
+
+  ["Pocco81/TrueZen.nvim"] = {
+    cmd = {
+      "TZAtaraxis",
+      "TZMinimalist",
+      "TZFocus",
+    },
+    config = function()
+      require "custom.plugins.truezen"
+    end,
+  },
+
+  ["Pocco81/auto-save.nvim"] = {
+    config = function()
+      require("auto-save").setup {}
     end,
   },
 
@@ -72,8 +71,8 @@ return {
 
   ["folke/trouble.nvim"] = {
     config = function()
-      require("trouble").setup{}
-  end,
+      require("trouble").setup {}
+    end,
   },
 
   ["nvim-neo-tree/neo-tree.nvim"] = {
@@ -82,30 +81,37 @@ return {
       "nvim-lua/plenary.nvim",
       "kyazdani42/nvim-web-devicons",
       "MunifTanjim/nui.nvim",
-    }
+    },
   },
 
   ["hrsh7th/nvim-cmp"] = {},
 
-  ['simrat39/symbols-outline.nvim'] = {
-    config = function ()
-      require("symbols-outline").setup()
-    end
-  },
-  ['folke/todo-comments.nvim'] = {
-    requires = {
-      "nvim-lua/plenary.nvim"
-    },
+  ["simrat39/symbols-outline.nvim"] = {
     config = function()
-      require("custom.plugins.todo")
-    end
+      require("symbols-outline").setup()
+    end,
   },
 
-  [ "iamcco/markdown-preview.nvim"] = {
-    run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown"
+  ["folke/todo-comments.nvim"] = {
+    requires = {
+      "nvim-lua/plenary.nvim",
     },
+    config = function()
+      require "custom.plugins.todo"
+    end,
+  },
+
+  ["iamcco/markdown-preview.nvim"] = {
+    run = "cd app && npm install",
+    setup = function()
+      vim.g.mkdp_filetypes = { "markdown" }
+    end,
+    ft = { "markdown" },
   },
 
   ["sbdchd/neoformat"] = {},
 
+  ["f-person/git-blame.nvim"] = {},
+
+  ["kdheepak/lazygit.nvim"] = {},
 }

@@ -1,79 +1,84 @@
 configuration{
-    modi: "run,drun,window";
+    modi: "combi";
     lines: 5;
-    font: "Sofia Pro 16";
+    font: "Metropolis 18";
     show-icons: true;
     icon-theme: "Papirus";
     terminal: "kitty";
     drun-display-format: "{name}";
-    location: 0;
+    location: 7;
+    display-combi: 			"";
     disable-history: false;
-    hide-scrollbar: true;
-    display-drun: " 󰵆  Apps ";
-    display-run: " 󰆍  Run ";
-    display-window: " 󱂬  Window";
-    sidebar-mode: true;
+    hide-scrollbar: false;
+    sidebar-mode: false;
 }
 
-@theme "tokyo-night"
+@theme "decay"
 
 element-text, element-icon , mode-switcher {
     background-color: inherit;
     text-color:       inherit;
-    
 }
 
 window {
-    height: 500px;
+    height: 800px;
     border: 0px;
     border-color: @fg-col;
+    x-offset: 20;
+    y-offset: -80;
     background-color: @bg-col;
     border-radius: 15;
 }
 
 mainbox {
     background-color: @bg-col;
-    children: [ mode-switcher, inputbar, listview ];
+    children: [ inputbar, listview ];
+    spacing:                       	0%;
+    padding:                        2% 1% 2% 1%;
 }
 
 inputbar {
-    children: [prompt,entry];
+	children: 						[ prompt, entry ];
     background-color: @bg-col;
-    border-radius: 5px;
-    padding: 2px;
+    expand:                         false;
+	border:							0.1% 0.1% 0.1% 0.1%;
+    border-radius:                  12px;
+	border-color:					@border-col;
+    margin:                         2% 1% 0% 1%;
+    padding:                        0%;
+
 }
 
 prompt {
-    background-color: @blue;
-    padding: 6px;
-    text-color: @bg-col;
-    border-radius: 5px;
-    margin: 20px 0px 0px 20px;
-}
-
-textbox-prompt-colon {
-    expand: false;
-    str: ":";
+    background-color: @bg-col;
+    padding: 15px 0px 0px 10px;
+    font: "Phosphor 23";
+    text-color: @fg-col;
+    margin: 0.5px 0px 0px 20px;
 }
 
 entry {
-    padding: 6px;
-    margin: 20px 0px 0px 10px;
+    padding: 15px;
+    margin: 4px 20px 0px 0px;
     text-color: @fg-col;
     background-color: @bg-col;
+    placeholder: " Browse Apps, Files...";
+    horizontal-align:               0;
+    expand:                         true;
+    blink:                          true;
 }
 
 listview {
     border: 0px 0px 0px;
-    padding: 10 10 0;
-    margin: 10 10 0 10;
+    padding: 10 00 0;
+    margin: 20 10 0 10;
     columns: 4;
-    spacing: 15;
+    spacing: 0;
     background-color: @bg-col;
 }
 
 element {
-    padding: 5px;
+    padding: 10px 20px 10px 20px;
     background-color: @bg-col;
     text-color: @fg-col  ;
     orientation: vertical;
@@ -86,34 +91,14 @@ element-icon {
 }
 
 element selected {
-    background-color:  @fg-col2 ;
-    text-color: @bg-col  ;
-    border-radius: 8px;
+    background-color:  @bg-col-light ;
+    text-color: @fg-col  ;
+    border-radius: 15px;
 }
 
 element-text {
     vertical-align: 0.5;
     horizontal-align: 0.5;
     expand: true;
-    font: "Sofia Pro Bold 14";
+    font: "Metropolis 14";
   }
-
-mode-switcher {
-    spacing: 0;
-    margin: 5 10 5 10;
-    padding: 10 50 5 50;
-  }
-
-button {
-    padding: 10px;
-    background-color: @bg-col-light;
-    text-color: @fg-col;
-    vertical-align: 0.5; 
-    horizontal-align: 0.5;
-}
-
-button selected {
-  background-color:  @green ;
-  text-color: @bg-col;
-  border-radius: 10px;
-}
