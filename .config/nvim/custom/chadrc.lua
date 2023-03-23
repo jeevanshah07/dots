@@ -1,33 +1,20 @@
+---@type ChadrcConfig
 local M = {}
 
-local plugin_conf = require "custom.plugins.configs"
-local userPlugins = require "custom.plugins"
-local override = require "custom.override"
-
-M.plugins = {
-
-   options = {
-      lspconfig = {
-         setup_lspconf = "custom.plugins.lspconfig",
-      },
-      statusline = {
-        style = "slant"
-      },
-   },
-
-   override = {
-      ["kyazdani42/nvim-tree.lua"] = plugin_conf.nvimtree,
-      ["nvim-treesitter/nvim-treesitter"] = plugin_conf.treesitter,
-      ["williamboman/mason.nvim"] = override.mason,
-   },
-
-   user = userPlugins,
-}
+-- Path to overriding theme and highlights files
+local highlights = require "custom.highlights"
 
 M.ui = {
-  theme = "radium",
+  theme = "github_dark",
+  theme_toggle = { "github_dark" },
+
+  hl_override = highlights.override,
+  hl_add = highlights.add,
 }
 
+M.plugins = "custom.plugins"
+
+-- check core.mappings for table structure
 M.mappings = require "custom.mappings"
 
 return M

@@ -8,6 +8,7 @@ M.truzen = {
    },
 }
 
+
 M.treesitter = {
    n = {
       ["<leader>cu"] = { "<cmd> TSCaptureUnderCursor <CR>", "= find media" },
