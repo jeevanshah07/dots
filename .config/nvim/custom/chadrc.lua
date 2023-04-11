@@ -2,14 +2,14 @@
 local M = {}
 
 -- Path to overriding theme and highlights files
-local highlights = require "custom.highlights"
+-- local highlights = require "custom.highlights"
 
 M.ui = {
   theme = "github_dark",
-  theme_toggle = { "github_dark" },
+  theme_toggle = { "everblush" },
 
-  hl_override = highlights.override,
-  hl_add = highlights.add,
+  -- hl_override = highlights.override,
+  -- hl_add = highlights.add,
 }
 
 M.plugins = "custom.plugins"

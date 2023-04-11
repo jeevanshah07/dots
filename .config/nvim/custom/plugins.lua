@@ -56,12 +56,13 @@ local plugins = {
     ft = { "html", "javascriptreat" },
     after = "nvim-treesitter",
     config = function()
-      require("configs.smolconfigs").autotag()
+      require("custom.configs.smolconfigs").autotag()
     end,
   },
 
   {
     "wakatime/vim-wakatime",
+    lazy = false,
   },
 
   {
@@ -77,6 +78,7 @@ local plugins = {
     config = function()
       require("trouble").setup {}
     end,
+    cmd = "TroubleToggle"
   },
 
   {
@@ -88,14 +90,16 @@ local plugins = {
     config = function()
       require("symbols-outline").setup()
     end,
+    cmd = "SymbolsOutline"
   },
 
   {
     "folke/todo-comments.nvim",
     requires = { "nvim-lua/plenary.nvim" },
     config = function()
-      require("configs.todo")
+      require("custom.configs.todo")
     end,
+    lazy = false,
   },
 
   {
@@ -105,10 +109,12 @@ local plugins = {
       vim.g.mkdp_filetypes = { "markdown" }
     end,
     ft = { "markdown" },
+    keys = { "<leader>md" },
   },
 
   {
     "sbdchd/neoformat",
+    lazy = false,
   },
 
   {
@@ -117,6 +123,7 @@ local plugins = {
 
   {
     "kdheepak/lazygit.nvim",
+    cmd = "LazyGit"
   },
 
   {
@@ -125,13 +132,18 @@ local plugins = {
 
   {
     "Exafunction/codeium.vim",
-  }
-  -- To make a plugin not be loaded
-  -- {
-  --   "NvChad/nvim-colorizer.lua",
-  --   enabled = false
-  -- },
+  },
 
+  {
+    "itchyny/vim-cursorword",
+    lazy=false,
+  },
+
+  {
+    "michaelb/sniprun",
+    build="bash ./install.sh",
+    lazy=false,
+  }
 }
 
 return plugins

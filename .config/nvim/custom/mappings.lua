@@ -8,7 +8,11 @@ M.truzen = {
    },
 }
 
-
+M.sniprun = {
+  v = {
+    ["<leader>sr"] = { "<cmd> SnipRun <CR>", "Run the highlighted code block"}
+  }
+}
 M.treesitter = {
    n = {
       ["<leader>cu"] = { "<cmd> TSCaptureUnderCursor <CR>", "= find media" },
