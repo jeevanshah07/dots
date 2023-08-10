@@ -128,6 +128,7 @@ local plugins = {
 
   {
     "alaviss/nim.nvim",
+    lazy=false,
   },
 
   {

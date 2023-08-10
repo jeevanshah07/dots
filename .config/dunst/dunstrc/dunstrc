@@ -13,7 +13,7 @@
     sort = yes
     idle_threshold = 120
 
-    font = Fira Code Medium 10
+    font = JetBrainsMono Medium 14
     line_height = 0
     markup = full
     format = "<b>%s</b>\n%b"
