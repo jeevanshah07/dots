@@ -144,6 +144,11 @@ local plugins = {
     "michaelb/sniprun",
     build="bash ./install.sh",
     lazy=false,
+  },
+
+  {
+    "andweeb/presence.nvim",
+    lazy=false,
   }
 }
 
