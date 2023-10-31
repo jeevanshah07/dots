@@ -145,11 +145,6 @@ local plugins = {
     build="bash ./install.sh",
     lazy=false,
   },
-
-  {
-    "andweeb/presence.nvim",
-    lazy=false,
-  }
 }
 
 return plugins
