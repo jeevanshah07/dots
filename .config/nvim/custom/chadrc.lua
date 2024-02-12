@@ -5,8 +5,12 @@ local M = {}
 -- local highlights = require "custom.highlights"
 
 M.ui = {
-  theme = "decay",
+  theme = "yoru",
   theme_toggle = { "everblush" },
+
+  statusline = {
+    theme = "default",
+  }
 
   -- hl_override = highlights.override,
   -- hl_add = highlights.add,
