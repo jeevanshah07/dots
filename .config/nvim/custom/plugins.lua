@@ -1,4 +1,4 @@
-local overrides = require("custom.configs.overrides")
+local overrides = require "custom.configs.overrides"
 
 ---@type NvPluginSpec[]
 local plugins = {
@@ -25,7 +25,7 @@ local plugins = {
   -- override plugin configs
   {
     "williamboman/mason.nvim",
-    opts = overrides.mason
+    opts = overrides.mason,
   },
 
   {
@@ -78,7 +78,7 @@ local plugins = {
     config = function()
       require("trouble").setup {}
     end,
-    cmd = "TroubleToggle"
+    cmd = "TroubleToggle",
   },
 
   {
@@ -90,14 +90,14 @@ local plugins = {
     config = function()
       require("symbols-outline").setup()
     end,
-    cmd = "SymbolsOutline"
+    cmd = "SymbolsOutline",
   },
 
   {
     "folke/todo-comments.nvim",
     requires = { "nvim-lua/plenary.nvim" },
     config = function()
-      require("custom.configs.todo")
+      require "custom.configs.todo"
     end,
     lazy = false,
   },
@@ -123,12 +123,12 @@ local plugins = {
 
   {
     "kdheepak/lazygit.nvim",
-    cmd = "LazyGit"
+    cmd = "LazyGit",
   },
 
   {
     "alaviss/nim.nvim",
-    lazy=false,
+    lazy = false,
   },
 
   {
@@ -137,14 +137,26 @@ local plugins = {
 
   {
     "itchyny/vim-cursorword",
-    lazy=false,
+    lazy = false,
   },
 
   {
     "michaelb/sniprun",
-    build="bash ./install.sh",
-    lazy=false,
+    build = "bash ./install.sh",
+    lazy = false,
   },
+
+  {
+    'edluffy/hologram.nvim',
+    lazy=false,
+    config = function()
+      require('hologram').setup{
+        auto_display = true
+      }
+    end
+  },
+
+  -- lazy.nvim
 }
 
 return plugins
