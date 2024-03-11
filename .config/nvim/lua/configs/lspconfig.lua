@@ -1,5 +1,5 @@
-local on_attach = require("plugins.configs.lspconfig").on_attach
-local capabilities = require("plugins.configs.lspconfig").capabilities
+local on_attach = require("nvchad.configs.lspconfig").on_attach
+local capabilities = require("nvchad.configs.lspconfig").capabilities
 
 local lspconfig = require("lspconfig")
 local servers = { "golangci_lint_ls", "gopls", "texlab", "ruff_lsp", "bashls", "html", "cssls", "clangd", "pyright", "rust_analyzer", "jsonls", "tsserver", "jdtls", "nimls" }

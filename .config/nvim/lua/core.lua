@@ -1,6 +1,6 @@
 local M = {}
 
-require "custom.utils.mouse"
+require "utils.mouse"
 
 -- 󰞏 on
 -- 󱜞 off
