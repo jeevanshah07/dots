@@ -14,7 +14,7 @@ require("todo-comments").setup {
     WARN = { icon = " ", color = "error", alt = { "WARNING", "XXX" } },
     PERF = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
     NOTE = { icon = " ", color = "#10B981", alt = { "INFO", "DONE" } },
-    DOC = { icon = "📚", color = "#C16C09"}
+    DOC = { icon = "📚", color = "#C16C09" },
   },
   merge_keywords = true, -- when true, custom keywords will be merged with the defaults
   -- highlighting of the line containing the todo comment
@@ -37,7 +37,7 @@ require("todo-comments").setup {
     warning = { "DiagnosticWarning", "WarningMsg", "#FBBF24" },
     info = { "DiagnosticInfo", "#2563EB" },
     hint = { "DiagnosticHint", "#10B981" },
-    done = { "DiagnosticInfo", "#10B981"},
+    done = { "DiagnosticInfo", "#10B981" },
     default = { "Identifier", "#7C3AED" },
   },
   search = {
@@ -53,5 +53,5 @@ require("todo-comments").setup {
     -- don't replace the (KEYWORDS) placeholder
     pattern = [[\b(KEYWORDS):]], -- ripgrep regex
     -- pattern = [[\b(KEYWORDS)\b]], -- match without the extra colon. You'll likely get false positives
-    },
-  }
+  },
+}
