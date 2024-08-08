@@ -1,7 +1,5 @@
-tb
-
 # NOTE: Needed for ssh keys passphrase
-eval $(keychain --eval --quiet ~/.ssh/proxmox ~/.ssh/photoprism ~/.ssh/nginx ~/.ssh/heimdall ~/.ssh/pihole ~/.ssh/guac)
+eval $(keychain --eval --quiet ~/.ssh/proxmox ~/.ssh/photoprism ~/.ssh/nginx ~/.ssh/heimdall ~/.ssh/pihole ~/.ssh/guac ~/.ssh/auth)
 
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
@@ -21,6 +19,7 @@ export mCONF="~/Coding/Malcolm-next/config.yml"
 PATH="/home/marvel/.local/bin":$PATH
 export PATH="/home/marvel/.cargo/bin":$PATH
 export PATH=/home/marvel/.nimble/bin:$PATH
+export PATH="/usr/local/texlive/2024/bin/x86_64-linux":$PATH
 
 # NOTE: See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="powerlevel10k/powerlevel10k" 
@@ -43,6 +42,9 @@ plugins=(
   zsh-syntax-highlighting
 )
 
+# NOTE: zsh completions 
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+
 source $ZSH/oh-my-zsh.sh
 
 # NOTE: Add custom escape keybind for vi-mode (zsh-vi-mode plugin)
@@ -52,8 +54,15 @@ ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
 alias malcolm-env="source $mENV"
 alias malcolm-start="python $mRUN $mCONF"
 alias malcolm-linter="flake8 --extend-ignore=E501,E401 ./src/*"
-alias ls="exa -la --no-user --git --icons --group-directories-first"
+alias ls="exa -la --grid --no-user --header --git --icons --group-directories-first"
 alias cp="cp -r"
+alias sshp="ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no"
+alias mt="manim-test"
+alias mb="manim-build"
+
+gitcap() {
+  git add . && git commit -am "$1" && git push
+}
 
 if [ $TERM = "xterm-kitty" ]
 then
@@ -70,11 +79,16 @@ else
   export EDITOR='nvim'
 fi
 
-# NOTE: user functions
-
+# NOTE: locale
+LC_CTYPE=en_US.UTF-8
+LC_ALL=en_US.UTF-8
 
 
 # NOTE:  To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export PATH=$PATH:/home/marvel/.spicetify
+export GBM_BACKEND=nvidia-drm
+export __GLX_VENDOR_LIBRARY_NAME=nvidia
+
+eval "$(zoxide init --cmd cd zsh)"
