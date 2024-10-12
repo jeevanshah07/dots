@@ -3,6 +3,7 @@ local options = {
     lua = { "stylua" },
     python = { "black", "ruff" },
     css = { "prettier" },
+    latex = { "latexindent" },
     -- html = { "prettier" },
   },
 
