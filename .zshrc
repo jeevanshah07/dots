@@ -1,5 +1,5 @@
 # NOTE: Needed for ssh keys passphrase
-eval $(keychain --eval --quiet ~/.ssh/proxmox ~/.ssh/photoprism ~/.ssh/nginx ~/.ssh/heimdall ~/.ssh/pihole ~/.ssh/guac ~/.ssh/auth)
+eval $(keychain --eval --quiet ~/.ssh/blog ~/.ssh/proxmox ~/.ssh/photoprism ~/.ssh/nginx ~/.ssh/heimdall ~/.ssh/pihole ~/.ssh/guac ~/.ssh/auth)
 
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
@@ -19,10 +19,12 @@ export mCONF="~/Coding/Malcolm-next/config.yml"
 export QT_QPA_PLATFORM="wayland;xcb"
 
 export ANDROID_HOME=$HOME/Android/Sdk
+export ANDROID_SDK_ROOT=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/build-tools
 export PATH=$PATH:$ANDROID_HOME/cmdline-tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH="$PATH":"$HOME/.pub-cache/bin"
 
 # Add these lines to your shell configuration file
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
