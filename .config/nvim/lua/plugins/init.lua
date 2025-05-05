@@ -1,5 +1,14 @@
 return {
   {
+    "lervag/vimtex",
+    lazy = false, -- we don't want to lazy load VimTeX
+    -- tag = "v2.15", -- uncomment to pin to a specific release
+    init = function()
+      -- VimTeX configuration goes here, e.g.
+      vim.g.vimtex_view_general_viewer = "okular"
+    end,
+  },
+  {
     "stevearc/conform.nvim",
     -- event = 'BufWritePre', -- uncomment for format on save
     config = function()
@@ -9,7 +18,7 @@ return {
 
   {
     "sbdchd/neoformat",
-    lazy=false,
+    lazy = false,
   },
 
   -- These are some examples, uncomment them if you want to see them work!

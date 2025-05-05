@@ -27,8 +27,8 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 
 # Add these lines to your shell configuration file
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
-export PATH=$JAVA_HOME/bin:$PATH
+# export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
+# export PATH=$JAVA_HOME/bin:$PATH
 
 PATH="/home/marvel/.local/bin":$PATH
 export PATH="/home/marvel/.cargo/bin":$PATH
@@ -109,3 +109,4 @@ export __GLX_VENDOR_LIBRARY_NAME=nvidia
 eval "$(zoxide init --cmd cd zsh)"
 
 export GPG_TTY=$TTY
+source /usr/share/nvm/init-nvm.sh
