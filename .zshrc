@@ -50,8 +50,33 @@ gitcap() {
 }
 
 gitwork() {
-  git subtree split --prefix="$1" -b homework && git push assignment homework:main --force && git branch -D homework
+  # $1 = remote URL, $2 = folder
+  url="$1"
+  folder="$2"
+
+  # Unique remote name from folder name
+  remote_name="assignment-$(basename "$folder")"
+
+  # Clean up remote if it already exists
+  git remote remove "$remote_name" 2>/dev/null
+  git remote add "$remote_name" "$url"
+
+  # Unique temporary branch name
+  tmp_branch="tmp-$(basename "$folder")-branch"
+
+  # Clean up old temp branch if it exists
+  git branch -D "$tmp_branch" 2>/dev/null
+
+  # Split subtree into a fresh branch
+  git subtree split --prefix="$folder" -b "$tmp_branch" \
+    && git push "$remote_name" "$tmp_branch:main" --force \
+    && git branch -D "$tmp_branch" \
+    && git remote remove "$remote_name"
 }
+# gitwork() {
+#   git remote add assignment "$1"
+#   git subtree split --prefix="$2" -b homework && git push assignment homework:main --force && git branch -D homework
+# }
 
 if [ $TERM = "xterm-kitty" ]
 then
@@ -93,3 +118,4 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 export GPG_TTY=$(tty)
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+export PATH="$HOME/.config/emacs/bin:$PATH"
