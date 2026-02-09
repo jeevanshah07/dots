@@ -4,6 +4,8 @@ local options = {
     python = { "black", "ruff" },
     css = { "prettier" },
     latex = { "latexindent" },
+    javascript = { "prettier" },
+    typescript = { "prettierj" },
     -- html = { "prettier" },
   },
 
