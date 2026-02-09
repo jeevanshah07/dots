@@ -1,5 +1,4 @@
 # There's no place like ~
-
 ## Welcome to my dots, here's a quick overview:
 
 * OS: Arch Linux
