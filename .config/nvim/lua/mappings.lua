@@ -5,10 +5,11 @@ require "nvchad.mappings"
 local map = vim.keymap.set
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
-map("i", "jk", "<ESC>")
+map("i", "jk", "<ESC>", { noremap = true, silent = true })
 map("n", "<leader>ts", "<cmd> SymbolsOutline <CR>")
 map("n", "j", "gj")
 map("n", "k", "gk")
 map("n", "<leader>tr", "<cmd> Trouble diagnostics toggle <CR>")
 map("n", "<leader>td", "<cmd> Trouble todo toggle <CR>")
+map({"v", "n"}, "<leader>pp", "\"0p")
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")

@@ -1,5 +1,38 @@
 return {
   {
+    "kevinhwang91/nvim-ufo",
+    dependencies = "kevinhwang91/promise-async",
+    event = "BufRead",
+    keys = {
+      {
+        "zR",
+        function()
+          require("ufo").openAllFolds()
+        end,
+        desc = "Open all folds",
+      },
+      {
+        "zM",
+        function()
+          require("ufo").closeAllFolds()
+        end,
+        desc = "Close all folds",
+      },
+    },
+    config = function()
+      require("ufo").setup {
+        provider_selector = function(bufnr, filetype, buftype)
+          return { "treesitter", "indent" }
+        end,
+      }
+
+      vim.o.foldcolumn = "1" -- Show fold column
+      vim.o.foldlevel = 99 -- Using ufo provider need a large value
+      vim.o.foldlevelstart = 99
+      vim.o.foldenable = true
+    end,
+  },
+  {
     "andymass/vim-matchup",
     lazy = false,
     config = function()
@@ -89,6 +122,12 @@ return {
 
   {
     "wakatime/vim-wakatime",
+    lazy = false,
+  },
+
+  {
+    "karb94/neoscroll.nvim",
+    opts = {},
     lazy = false,
   },
 
