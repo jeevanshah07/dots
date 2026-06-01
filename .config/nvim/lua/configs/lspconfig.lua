@@ -2,7 +2,7 @@ require("nvchad.configs.lspconfig").defaults()
 
 local nvlsp = require "nvchad.configs.lspconfig"
 
-local servers = { "ty", "clangd", "ts_ls", "pyright", "html", "cssls", "ruff", "texlab" }
+local servers = { "jdtls", "arduino-language-server", "ty", "clangd", "ts_ls", "pyright", "html", "cssls", "ruff", "texlab" }
 
 -- lsps with default config
 for _, lsp in ipairs(servers) do
