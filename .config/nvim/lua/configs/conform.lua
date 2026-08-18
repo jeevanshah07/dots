@@ -6,6 +6,7 @@ local options = {
     latex = { "latexindent" },
     javascript = { "prettier" },
     typescript = { "prettierj" },
+    zig = { "zls" },
     -- html = { "prettier" },
   },
 

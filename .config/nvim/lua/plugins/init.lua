@@ -1,5 +1,8 @@
 return {
   {
+    "ziglang/zig.vim",
+  },
+  {
     "folke/snacks.nvim",
     priority = 1000,
     lazy = false,
@@ -113,7 +116,7 @@ return {
       },
       -- git
       {
-        "<leader>gb",
+        "<leader>gbr",
         function()
           Snacks.picker.git_branches()
         end,
@@ -643,16 +646,7 @@ return {
     end,
   },
   {
-    "rcarriga/nvim-notify",
-    event = "VeryLazy", -- Load after UI is ready
-    config = function()
-      require("notify").setup()
-      vim.notify = require "notify"
-    end,
-  },
-  {
     "stevearc/conform.nvim",
-    dependencies = { "rcarriga/nvim-notify" },
     event = { "BufWritePre" },
     cmd = { "ConformInfo" },
     keys = {
@@ -728,31 +722,22 @@ return {
   {
     "windwp/nvim-ts-autotag",
     lazy = false,
+    opts = {},
   },
 
   {
-    "Pocco81/auto-save.nvim",
-    lazy = false,
-    config = function()
-      require("auto-save").setup {}
-    end,
+    "okuuva/auto-save.nvim",
+    event = { "InsertLeave", "TextChanged" },
+    opts = {},
   },
 
   {
     "folke/todo-comments.nvim",
-    requires = { "nvim-lua/plenary.nvim" },
+    dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
       require "configs.todo"
     end,
     lazy = false,
-  },
-
-  {
-    "simrat39/symbols-outline.nvim",
-    config = function()
-      require("symbols-outline").setup()
-    end,
-    cmd = "SymbolsOutline",
   },
 
   {
@@ -815,17 +800,50 @@ return {
       },
     },
   },
-
   {
     "nvim-treesitter/nvim-treesitter",
-    opts = {
-      ensure_installed = {
+    branch = "main",
+    lazy = false,
+    build = ":TSUpdate",
+
+    config = function()
+      require("nvim-treesitter").install {
         "vim",
         "lua",
         "vimdoc",
         "html",
         "css",
+        "latex",
+      }
+
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = { "vim", "lua", "vimdoc", "html", "css", "tex" },
+        callback = function()
+          vim.treesitter.start()
+        end,
+      })
+    end,
+  },
+  {
+    "f-person/git-blame.nvim",
+    keys = {
+      {
+        "<leader>gb",
+        "<cmd>GitBlameToggle<cr>",
+        desc = "Toggle Git Blame",
       },
+    },
+    -- Because of the keys part, you will be lazy loading this plugin.
+    -- The plugin will only load once one of the keys is used.
+    -- If you want to load the plugin at startup, add something like event = "VeryLazy",
+    -- or lazy = false. One of both options will work.
+    opts = {
+      -- your configuration comes here
+      -- for example
+      enabled = false, -- enable on the first <leader>gb press
+      message_template = " <summary> • <date> • <author> • <<sha>>", -- template for the blame message, check the Message template section for more options
+      date_format = "%m-%d-%Y %H:%M:%S", -- template for the date, check Date format section for more options
+      virtual_text_column = 1, -- virtual text start column, check Start virtual text at column section for more options
     },
   },
 }
